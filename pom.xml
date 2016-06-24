@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.socgen.its.tmsdev.common</groupId>
+		<artifactId>TMSDEV-Parent</artifactId>
+		<version>1.0.3</version>
+	</parent>
+
+	<groupId>com.socgen.its.tmsdev.gsp</groupId>
+	<artifactId>Gsp-Parent</artifactId>
+	<packaging>pom</packaging>
+	<version>01.01.83-SNAPSHOT</version>
+
+	<name>Projet Gsp-Project</name>
+	<description>Regroupe tous les modules applicatifs du Projet Gsp-Project</description>
+
+	<scm>
+		<connection>scm:svn:http://adn.dns44.socgen/svn/TMSDEV/Gsp-Project/trunk/Gsp-Parent</connection>
+		<developerConnection>scm:svn:http://adn.dns44.socgen/svn/TMSDEV/Gsp-Project/trunk/Gsp-Parent</developerConnection>
+	</scm>
+
+	<modules>
+		<!-- <module>../Gsp-WsClient</module> -->
+		<module>../Gsp7-WsClient</module>
+		<module>../Gsp-Service</module>
+		<module>../Gsp-Web</module>
+		<module>../Gsp-Automate</module>
+	</modules>
+
+	<properties>
+		<sonar.exclusions>**/generated/**</sonar.exclusions>
+		<hibernate.validator.version>4.1.0.Final</hibernate.validator.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${hibernate.validator.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${hibernate.validator.version}</version>
+				<classifier>sources</classifier>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.socgen.its.tmsdev.sauces</groupId>
+			<artifactId>Sauce-Slf4j</artifactId>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>com.socgen.its.tmsdev.sauces</groupId>
+			<artifactId>Sauce-TU</artifactId>
+			<type>pom</type>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.gmaven</groupId>
+				<artifactId>gmaven-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
