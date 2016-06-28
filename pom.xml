@@ -1,84 +1,68 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
-		<groupId>com.socgen.its.tmsdev.common</groupId>
-		<artifactId>TMSDEV-Parent</artifactId>
-		<version>1.0.3</version>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-parent</artifactId>
+		<version>Angel.SR6</version>
 	</parent>
-
-	<groupId>com.socgen.its.tmsdev.gsp</groupId>
-	<artifactId>Gsp-Parent</artifactId>
-	<packaging>pom</packaging>
-	<version>01.01.83-SNAPSHOT</version>
-
-	<name>Projet Gsp-Project</name>
-	<description>Regroupe tous les modules applicatifs du Projet Gsp-Project</description>
-
-	<scm>
-		<connection>scm:svn:http://adn.dns44.socgen/svn/TMSDEV/Gsp-Project/trunk/Gsp-Parent</connection>
-		<developerConnection>scm:svn:http://adn.dns44.socgen/svn/TMSDEV/Gsp-Project/trunk/Gsp-Parent</developerConnection>
-	</scm>
-
-	<modules>
-		<!-- <module>../Gsp-WsClient</module> -->
-		<module>../Gsp7-WsClient</module>
-		<module>../Gsp-Service</module>
-		<module>../Gsp-Web</module>
-		<module>../Gsp-Automate</module>
-	</modules>
+	<groupId>org.mycompany</groupId>
+	<artifactId>Lab-7-sentence-2</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Lab-7-sentence-2</name>
+	<description>Lab 7 sentence by Virendra</description>
 
 	<properties>
-		<sonar.exclusions>**/generated/**</sonar.exclusions>
-		<hibernate.validator.version>4.1.0.Final</hibernate.validator.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<start-class>org.mycompany.eureka.client.Lab7EurekaClientSentence2</start-class>
+		<java.version>1.8</java.version>
 	</properties>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-validator</artifactId>
-				<version>${hibernate.validator.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-validator</artifactId>
-				<version>${hibernate.validator.version}</version>
-				<classifier>sources</classifier>
-				<scope>provided</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.socgen.its.tmsdev.sauces</groupId>
-			<artifactId>Sauce-Slf4j</artifactId>
-			<type>pom</type>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.socgen.its.tmsdev.sauces</groupId>
-			<artifactId>Sauce-TU</artifactId>
-			<type>pom</type>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-ribbon</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
-
 	<build>
 		<plugins>
-
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-
-			<plugin>
-				<groupId>org.codehaus.gmaven</groupId>
-				<artifactId>gmaven-plugin</artifactId>
-			</plugin>
-
 		</plugins>
 	</build>
 </project>
